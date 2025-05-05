@@ -1,31 +1,25 @@
 
-import { useRef, useEffect } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF, PerspectiveCamera } from "@react-three/drei";
+import { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
-function FinanceBot(props: any) {
-  const mesh = useRef<THREE.Mesh>(null!);
+function FinanceBot() {
+  const meshRef = useRef<THREE.Group>(null!);
   
-  // Simple animation
-  useFrame((state) => {
-    if (mesh.current) {
-      mesh.current.rotation.y += 0.003;
-      mesh.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-    }
-  });
-
   return (
-    <mesh {...props} ref={mesh} castShadow>
+    <group ref={meshRef} position={[0, 0, 0]} rotation={[0, 0, 0]}>
       {/* Sphere body */}
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial 
-        color="#9b87f5" 
-        metalness={0.8}
-        roughness={0.2}
-        emissive="#330080"
-        emissiveIntensity={0.2}
-      />
+      <mesh castShadow position={[0, 0, 0]}>
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshStandardMaterial 
+          color="#9b87f5" 
+          metalness={0.8}
+          roughness={0.2}
+          emissive="#330080"
+          emissiveIntensity={0.2}
+        />
+      </mesh>
       
       {/* Eyes */}
       <group position={[0, 0.3, 0.85]}>
@@ -55,7 +49,7 @@ function FinanceBot(props: any) {
       </group>
       
       {/* Finance graph hologram element */}
-      <group position={[0, 1.5, 0]} rotation={[0, 0, 0]}>
+      <group position={[0, 1.5, 0]}>
         <mesh>
           <torusGeometry args={[0.5, 0.05, 16, 100]} />
           <meshStandardMaterial 
@@ -91,7 +85,7 @@ function FinanceBot(props: any) {
           />
         </mesh>
       </group>
-    </mesh>
+    </group>
   );
 }
 
@@ -107,12 +101,6 @@ function ParticleField() {
     particlePositions[i3 + 1] = (Math.random() - 0.5) * 7;
     particlePositions[i3 + 2] = (Math.random() - 0.5) * 7;
   }
-  
-  useFrame(({clock}) => {
-    if (particlesRef.current) {
-      particlesRef.current.rotation.y = clock.elapsedTime * 0.05;
-    }
-  });
   
   return (
     <points ref={particlesRef}>
@@ -139,10 +127,10 @@ function Scene() {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} castShadow />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} color="#33C3F0" intensity={1} />
       
-      <FinanceBot position={[0, 0, 0]} />
+      <FinanceBot />
       <ParticleField />
       
       <OrbitControls
@@ -159,7 +147,7 @@ function Scene() {
 export default function ThreeMascot() {
   return (
     <div className="h-[400px] w-full">
-      <Canvas shadows dpr={[1, 2]}>
+      <Canvas>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={45} />
         <Scene />
       </Canvas>
