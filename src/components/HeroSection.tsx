@@ -14,12 +14,12 @@ const HeroSection = () => {
           className="flex-1 pr-0 lg:pr-10 text-center lg:text-left mb-10 lg:mb-0"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-4">
-            Your Finances, Managed by <span className="gradient-text">AI Agents</span>
+            Your Finances, <span className="gradient-text">Optimized</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-            WisperAI deploys an army of specialized AI agents to optimize your investments, 
-            manage bills, and plan your financial future—all working silently in the background.
+            WisperAI's advanced financial platform manages your investments, 
+            automates bill payments, and creates personalized plans to meet your financial goals.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -46,20 +46,20 @@ const HeroSection = () => {
       <div className="container mt-16 md:mt-24">
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">28%</p>
-            <p className="text-sm text-muted-foreground">Average Returns</p>
+            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">Automated</p>
+            <p className="text-sm text-muted-foreground">Bill Management</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">$2.4B</p>
-            <p className="text-sm text-muted-foreground">Managed Assets</p>
+            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">Smart</p>
+            <p className="text-sm text-muted-foreground">Budget Planning</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">15.7K</p>
-            <p className="text-sm text-muted-foreground">Happy Clients</p>
+            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">Secure</p>
+            <p className="text-sm text-muted-foreground">Technology</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">99.9%</p>
-            <p className="text-sm text-muted-foreground">Secure Uptime</p>
+            <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">Goal-Based</p>
+            <p className="text-sm text-muted-foreground">Financial Planning</p>
           </div>
         </div>
       </div>
