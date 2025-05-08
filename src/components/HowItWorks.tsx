@@ -5,23 +5,23 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     id: 1,
-    title: "Connect Your Accounts",
-    description: "Securely link your financial accounts to WisperAI and let our agents analyze your finances."
+    title: "System Mapping",
+    description: "We identify where autonomous agents deliver the highest ROI in your stack."
   },
   {
     id: 2,
-    title: "AI Analyzes Your Finances",
-    description: "Our AI agents scan your spending patterns, bills, income, and investment opportunities."
+    title: "Agent Deployment",
+    description: "Custom agents are configured to your specific workflows and security requirements."
   },
   {
     id: 3,
-    title: "Get Personalized Plans",
-    description: "Receive tailored recommendations for optimizing your finances, from bill payments to investments."
+    title: "Operational Integration",
+    description: "Your new autonomous workforce integrates with existing processes and monitoring."
   },
   {
     id: 4,
-    title: "Automate & Optimize",
-    description: "Let our AI agents implement your approved plans and continuously optimize your financial health."
+    title: "Continuous Adaptation",
+    description: "Agents evolve as your needs change and external systems update."
   }
 ];
 
@@ -46,10 +46,10 @@ const HowItWorks = () => {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
-            How <span className="gradient-text">WisperAI</span> Works
+            The Implementation <span className="gradient-text">Blueprint</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Our AI agents work seamlessly to optimize every aspect of your finances
+            A systematic approach to integrating autonomous agents into your financial systems
           </p>
         </div>
         

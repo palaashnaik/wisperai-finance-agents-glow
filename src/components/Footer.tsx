@@ -11,27 +11,27 @@ const Footer = () => {
               <h3 className="text-xl font-bold gradient-text">WisperAI</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              Revolutionizing personal finance with an army of AI agents working silently for your financial well-being.
+              Built by engineers who understand that in finance, execution is everything.
             </p>
           </div>
           
           <div>
-            <h4 className="font-medium text-base mb-4">Product</h4>
+            <h4 className="font-medium text-base mb-4">Solutions</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Features</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">How It Works</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Roadmap</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Pricing</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Banks & Financial Institutions</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Payment Processors</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Wealth Management</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Lending & Credit</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-medium text-base mb-4">Resources</h4>
+            <h4 className="font-medium text-base mb-4">Technology</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Blog</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Documentation</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">FAQs</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Agent Architecture</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Orchestration Platform</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security & Compliance</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Integration Infrastructure</a></li>
             </ul>
           </div>
           
@@ -39,9 +39,10 @@ const Footer = () => {
             <h4 className="font-medium text-base mb-4">Company</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">About Us</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Careers</a></li>
               <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Contact</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Legal</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Terms</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Privacy</a></li>
+              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security</a></li>
             </ul>
           </div>
         </div>

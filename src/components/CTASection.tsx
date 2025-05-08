@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -18,21 +19,24 @@ const CTASection = () => {
           
           <div className="relative p-8 md:p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Finances?
+              The Bottom Line
             </h2>
             
-            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
-              Join the waitlist today and be among the first to experience the power of AI-driven financial management.
+            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-4">
+              While your competition debates AI strategy, you could be deploying autonomous agents that execute it.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="bg-white/20 border-white/30 text-white placeholder:text-white/70"
-              />
+            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
+              The financial services leaders of tomorrow aren't just implementing AI. They're putting it to work.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-wisper-purple hover:bg-white/90 px-6">
-                Join Waitlist
+                Request Technical Briefing
+              </Button>
+              <Button variant="outline" className="border-white text-white hover:bg-white/20 flex items-center gap-2">
+                See Capability Demos
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
           </div>
