@@ -1,5 +1,4 @@
 
-import ThreeMascot from "./ThreeMascot";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -39,7 +38,14 @@ const HeroSection = () => {
           className="flex-1 relative"
         >
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-wisper-purple/30 to-wisper-blue/30 rounded-full blur-[120px] opacity-60" />
-          <ThreeMascot />
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Financial Dashboard Interface" 
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
+            <div className="absolute -bottom-3 -right-3 bg-wisper-purple/10 w-full h-full rounded-lg -z-10"></div>
+          </div>
         </motion.div>
       </div>
       
