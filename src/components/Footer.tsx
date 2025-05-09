@@ -5,46 +5,13 @@ const Footer = () => {
   return (
     <footer className="border-t">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
-            <div className="mb-4">
-              <h3 className="text-xl font-bold gradient-text">WisperAI</h3>
-            </div>
-            <p className="text-muted-foreground text-sm">
-              Built by engineers who understand that in finance, execution is everything.
-            </p>
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-4">
+            <h3 className="text-xl font-bold gradient-text">WisperAI</h3>
           </div>
-          
-          <div>
-            <h4 className="font-medium text-base mb-4">Solutions</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Banks & Financial Institutions</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Payment Processors</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Wealth Management</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Lending & Credit</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-medium text-base mb-4">Technology</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Agent Architecture</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Orchestration Platform</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security & Compliance</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Integration Infrastructure</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-medium text-base mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">About Us</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Contact</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Terms</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Privacy</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-foreground">Security</a></li>
-            </ul>
-          </div>
+          <p className="text-muted-foreground text-sm max-w-md mb-8">
+            Built by engineers who understand that in finance, execution is everything.
+          </p>
         </div>
         
         <div className="pt-8 mt-8 border-t">
