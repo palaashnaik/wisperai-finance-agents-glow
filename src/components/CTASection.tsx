@@ -8,7 +8,6 @@ import { ContactForm } from "@/components/ContactForm";
 
 const CTASection = () => {
   const [isBriefingOpen, setIsBriefingOpen] = useState(false);
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
     <section className="py-20">
@@ -35,19 +34,12 @@ const CTASection = () => {
               The financial services leaders of tomorrow aren't just implementing AI. They're putting it to work.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button 
-                className="bg-white text-wisper-purple hover:bg-white/90 px-6"
+                className="bg-white text-wisper-purple hover:bg-white/90 px-6 flex items-center gap-2"
                 onClick={() => setIsBriefingOpen(true)}
               >
-                Request Technical Briefing
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/20 flex items-center gap-2"
-                onClick={() => setIsDemoOpen(true)}
-              >
-                See Capability Demos
+                Book a Capability Demo
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
@@ -59,24 +51,11 @@ const CTASection = () => {
       <Dialog open={isBriefingOpen} onOpenChange={setIsBriefingOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Request Technical Briefing</DialogTitle>
+            <DialogTitle>Book a Capability Demo</DialogTitle>
           </DialogHeader>
           <ContactForm 
             onClose={() => setIsBriefingOpen(false)} 
-            ctaText="Request Briefing"
-          />
-        </DialogContent>
-      </Dialog>
-
-      {/* Capability Demos Dialog */}
-      <Dialog open={isDemoOpen} onOpenChange={setIsDemoOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>See Capability Demos</DialogTitle>
-          </DialogHeader>
-          <ContactForm 
-            onClose={() => setIsDemoOpen(false)} 
-            ctaText="Request Demo Access"
+            ctaText="Book Demo"
           />
         </DialogContent>
       </Dialog>

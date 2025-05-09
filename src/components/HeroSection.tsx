@@ -8,7 +8,6 @@ import { ContactForm } from "@/components/ContactForm";
 
 const HeroSection = () => {
   const [isCapabilityDemoOpen, setIsCapabilityDemoOpen] = useState(false);
-  const [isBriefingOpen, setIsBriefingOpen] = useState(false);
 
   return (
     <section className="pt-20 pb-10 md:pb-20 overflow-hidden">
@@ -32,7 +31,7 @@ const HeroSection = () => {
             Because in finance, talking about problems doesn't solve them. <span className="gradient-text font-bold">Doing does.</span>
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start">
             <Button 
               size="lg" 
               className="gradient-bg hover:opacity-90 transition-opacity text-white flex items-center gap-2"
@@ -40,14 +39,6 @@ const HeroSection = () => {
             >
               Book a Capability Demo
               <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-wisper-purple text-wisper-purple hover:bg-wisper-purple/10"
-              onClick={() => setIsBriefingOpen(true)}
-            >
-              Technical Briefing
             </Button>
           </div>
         </motion.div>
@@ -100,19 +91,6 @@ const HeroSection = () => {
           <ContactForm 
             onClose={() => setIsCapabilityDemoOpen(false)} 
             ctaText="Book Demo"
-          />
-        </DialogContent>
-      </Dialog>
-
-      {/* Technical Briefing Dialog */}
-      <Dialog open={isBriefingOpen} onOpenChange={setIsBriefingOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Request Technical Briefing</DialogTitle>
-          </DialogHeader>
-          <ContactForm 
-            onClose={() => setIsBriefingOpen(false)} 
-            ctaText="Request Briefing"
           />
         </DialogContent>
       </Dialog>
