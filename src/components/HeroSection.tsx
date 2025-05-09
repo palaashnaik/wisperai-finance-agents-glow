@@ -2,8 +2,14 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/ContactForm";
 
 const HeroSection = () => {
+  const [isCapabilityDemoOpen, setIsCapabilityDemoOpen] = useState(false);
+  const [isBriefingOpen, setIsBriefingOpen] = useState(false);
+
   return (
     <section className="pt-20 pb-10 md:pb-20 overflow-hidden">
       <div className="container flex flex-col lg:flex-row items-center pt-16 md:pt-20">
@@ -27,11 +33,20 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button size="lg" className="gradient-bg hover:opacity-90 transition-opacity text-white flex items-center gap-2">
+            <Button 
+              size="lg" 
+              className="gradient-bg hover:opacity-90 transition-opacity text-white flex items-center gap-2"
+              onClick={() => setIsCapabilityDemoOpen(true)}
+            >
               Book a Capability Demo
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="border-wisper-purple text-wisper-purple hover:bg-wisper-purple/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-wisper-purple text-wisper-purple hover:bg-wisper-purple/10"
+              onClick={() => setIsBriefingOpen(true)}
+            >
               Technical Briefing
             </Button>
           </div>
@@ -75,6 +90,32 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Capability Demo Dialog */}
+      <Dialog open={isCapabilityDemoOpen} onOpenChange={setIsCapabilityDemoOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Book a Capability Demo</DialogTitle>
+          </DialogHeader>
+          <ContactForm 
+            onClose={() => setIsCapabilityDemoOpen(false)} 
+            ctaText="Book Demo"
+          />
+        </DialogContent>
+      </Dialog>
+
+      {/* Technical Briefing Dialog */}
+      <Dialog open={isBriefingOpen} onOpenChange={setIsBriefingOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Request Technical Briefing</DialogTitle>
+          </DialogHeader>
+          <ContactForm 
+            onClose={() => setIsBriefingOpen(false)} 
+            ctaText="Request Briefing"
+          />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

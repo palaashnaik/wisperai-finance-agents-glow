@@ -1,9 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/ContactForm";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +43,10 @@ const Navbar = () => {
           <a href="#roadmap" className="text-sm font-medium hover:text-wisper-purple transition-colors">
             Roadmap
           </a>
-          <Button className="gradient-bg hover:opacity-90 transition-opacity">
+          <Button 
+            className="gradient-bg hover:opacity-90 transition-opacity"
+            onClick={() => setIsEarlyAccessOpen(true)}
+          >
             Get Early Access
           </Button>
         </div>
@@ -54,6 +60,19 @@ const Navbar = () => {
           </Button>
         </div>
       </div>
+
+      {/* Early Access Dialog */}
+      <Dialog open={isEarlyAccessOpen} onOpenChange={setIsEarlyAccessOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Get Early Access</DialogTitle>
+          </DialogHeader>
+          <ContactForm 
+            onClose={() => setIsEarlyAccessOpen(false)} 
+            ctaText="Submit Request"
+          />
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 };

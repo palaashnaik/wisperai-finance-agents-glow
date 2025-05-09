@@ -1,10 +1,15 @@
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/ContactForm";
 
 const CTASection = () => {
+  const [isBriefingOpen, setIsBriefingOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+
   return (
     <section className="py-20">
       <div className="container">
@@ -31,10 +36,17 @@ const CTASection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-wisper-purple hover:bg-white/90 px-6">
+              <Button 
+                className="bg-white text-wisper-purple hover:bg-white/90 px-6"
+                onClick={() => setIsBriefingOpen(true)}
+              >
                 Request Technical Briefing
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/20 flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/20 flex items-center gap-2"
+                onClick={() => setIsDemoOpen(true)}
+              >
                 See Capability Demos
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -42,6 +54,32 @@ const CTASection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Technical Briefing Dialog */}
+      <Dialog open={isBriefingOpen} onOpenChange={setIsBriefingOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Request Technical Briefing</DialogTitle>
+          </DialogHeader>
+          <ContactForm 
+            onClose={() => setIsBriefingOpen(false)} 
+            ctaText="Request Briefing"
+          />
+        </DialogContent>
+      </Dialog>
+
+      {/* Capability Demos Dialog */}
+      <Dialog open={isDemoOpen} onOpenChange={setIsDemoOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>See Capability Demos</DialogTitle>
+          </DialogHeader>
+          <ContactForm 
+            onClose={() => setIsDemoOpen(false)} 
+            ctaText="Request Demo Access"
+          />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
