@@ -61,15 +61,15 @@ const HowItWorks = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
         >
           {steps.map((step, index) => (
-            <motion.div key={step.id} variants={item} className="flex flex-col items-center text-center">
+            <motion.div key={step.id} variants={item} className="flex flex-col items-center text-center relative">
               <div className="relative mb-6">
                 <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center text-white text-2xl font-bold">
                   {step.id}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-1/2 left-full -translate-y-1/2 items-center w-full h-0">
-                    <ArrowRight className="text-wisper-purple w-8 h-8 opacity-40 -translate-y-[0.5px]" />
-                    <div className="h-[2px] bg-wisper-purple/40 flex-grow -ml-1"></div>
+                  <div className="hidden lg:flex absolute top-1/2 left-full -translate-y-1/2 items-center w-full">
+                    <div className="h-[2px] bg-wisper-purple/40 w-[50px] mx-1"></div>
+                    <ArrowRight className="text-wisper-purple w-5 h-5 opacity-60" />
                   </div>
                 )}
               </div>
