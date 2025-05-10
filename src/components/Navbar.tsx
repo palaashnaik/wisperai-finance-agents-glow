@@ -112,6 +112,7 @@ const Navbar = () => {
           <ContactForm 
             onClose={() => setIsEarlyAccessOpen(false)} 
             ctaText="Submit Request"
+            source="navbar_early_access"
           />
         </DialogContent>
       </Dialog>

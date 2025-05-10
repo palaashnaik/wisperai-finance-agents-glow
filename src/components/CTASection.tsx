@@ -56,6 +56,7 @@ const CTASection = () => {
           <ContactForm 
             onClose={() => setIsBriefingOpen(false)} 
             ctaText="Book Demo"
+            source="cta_capability_demo"
           />
         </DialogContent>
       </Dialog>

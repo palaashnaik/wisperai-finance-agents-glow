@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# WisperAI Finance Agents
 
-## Project info
+Modern financial AI agents built with React, TypeScript, and Firebase.
 
-**URL**: https://lovable.dev/projects/d2067709-1a3d-4e0a-b074-40c783196ead
+## Features
 
-## How can I edit this code?
+- Email collection forms integrated with Firebase
+- Modern UI with a clean design
+- Mobile responsive layout
+- Custom animations and transitions
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Firebase (Firestore)
+- React Hook Form with Zod validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d2067709-1a3d-4e0a-b074-40c783196ead) and start prompting.
+## Development
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16+)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository
+2. Install dependencies:
 
-Follow these steps:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Start the development server:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Firebase Integration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application uses Firebase Firestore to store email leads collected from various contact forms across the website. Each submission is stored with:
 
-**Use GitHub Codespaces**
+- Email address
+- Source identifier (which form was used)
+- Timestamp
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+This project can be deployed to any static hosting service like Vercel, Netlify, or Firebase Hosting.
 
-This project is built with:
+```bash
+npm run build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d2067709-1a3d-4e0a-b074-40c783196ead) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+The build output will be available in the `dist` folder.

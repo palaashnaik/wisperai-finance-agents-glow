@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -14,6 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { saveEmailToFirebase } from "@/lib/firebase";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -23,12 +24,14 @@ interface ContactFormProps {
   onSubmit?: (data: z.infer<typeof formSchema>) => void;
   onClose?: () => void;
   ctaText?: string;
+  source?: string;
 }
 
 export function ContactForm({ 
   onSubmit, 
   onClose, 
-  ctaText = "Submit"
+  ctaText = "Submit",
+  source = "contact_form"
 }: ContactFormProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -36,18 +39,37 @@ export function ContactForm({
       email: "",
     },
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(data: z.infer<typeof formSchema>) {
-    // Here you would typically send this data to your backend
-    console.log("Form submitted with:", data);
-    toast.success("Thank you for your interest! We'll be in touch soon.");
+  async function handleSubmit(data: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
     
-    if (onSubmit) {
-      onSubmit(data);
-    }
-    
-    if (onClose) {
-      onClose();
+    try {
+      // Save email to Firebase
+      const result = await saveEmailToFirebase(data.email, source);
+      
+      if (result.success) {
+        toast.success("Thank you for your interest! We'll be in touch soon.");
+        
+        if (onSubmit) {
+          onSubmit(data);
+        }
+        
+        if (onClose) {
+          onClose();
+        }
+        
+        // Reset the form
+        form.reset();
+      } else {
+        toast.error("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -69,7 +91,12 @@ export function ContactForm({
         />
         
         <div className="flex justify-end">
-          <Button type="submit">{ctaText}</Button>
+          <Button 
+            type="submit" 
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : ctaText}
+          </Button>
         </div>
       </form>
     </Form>
