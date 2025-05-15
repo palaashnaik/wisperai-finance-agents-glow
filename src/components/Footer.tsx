@@ -10,14 +10,17 @@ const Footer = () => {
             <h3 className="text-xl font-bold gradient-text">WisperAI</h3>
           </div>
           <p className="text-muted-foreground text-sm max-w-md mb-8">
-            Built by engineers who understand that in finance, execution is everything.
+            Building the intelligence layer that financial services has been waiting for.
+          </p>
+          <p className="text-xs text-muted-foreground">
+            WisperAI is pre-launch. All capabilities described represent our development roadmap. Specific features and timelines subject to change.
           </p>
         </div>
         
         <div className="pt-8 mt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 WisperAI. All rights reserved.
+              © 2025 WisperAI | Terms | Security Framework | Privacy Policy
             </p>
             
             <div className="flex space-x-6">
