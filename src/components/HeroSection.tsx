@@ -10,16 +10,16 @@ const HeroSection = () => {
   const [isCapabilityDemoOpen, setIsCapabilityDemoOpen] = useState(false);
 
   return (
-    <section className="min-h-screen overflow-hidden relative flex flex-col justify-center items-center">
+    <section className="min-h-screen overflow-hidden relative flex flex-col justify-center items-center bg-background">
       <Vortex
-        backgroundColor="rgba(26, 31, 44, 0.9)" // Using wisper-deep-purple with opacity
         rangeY={800}
         particleCount={700}
-        baseHue={262} // Primary hue value
+        baseHue={275}
+        rangeHue={40}
         rangeSpeed={2}
         baseRadius={1.5}
         rangeRadius={3}
-        containerClassName="absolute inset-0 z-0"
+        containerClassName="absolute inset-0 z-0 opacity-70 dark:opacity-100"
       />
       <div className="container mx-auto flex flex-col items-center justify-center py-16 md:py-20 relative z-10 px-4">
         <motion.div 
@@ -28,7 +28,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6 text-foreground">
             Beyond automation. <span className="gradient-text">Beyond AI assistants.</span>
           </h1>
           
@@ -36,7 +36,7 @@ const HeroSection = () => {
             This is intelligent, autonomous finance.
           </p>
 
-          <p className="text-lg md:text-xl font-medium mb-8 mx-auto">
+          <p className="text-lg md:text-xl text-foreground font-medium mb-8 mx-auto">
             WisperAI is developing a new class of financial agents that work in concert, applying intelligence to navigate complex environments and accomplish sophisticated goals <span className="gradient-text font-bold">without human intervention.</span>
           </p>
           

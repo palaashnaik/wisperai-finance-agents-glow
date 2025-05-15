@@ -10,6 +10,7 @@ interface VortexProps {
   particleCount?: number;
   rangeY?: number;
   baseHue?: number;
+  rangeHue?: number;
   baseSpeed?: number;
   rangeSpeed?: number;
   baseRadius?: number;
@@ -31,7 +32,7 @@ export const Vortex = (props: VortexProps) => {
   const baseRadius = props.baseRadius || 1;
   const rangeRadius = props.rangeRadius || 2;
   const baseHue = props.baseHue || 220;
-  const rangeHue = 100;
+  const rangeHue = props.rangeHue || 100;
   const noiseSteps = 3;
   const xOff = 0.00125;
   const yOff = 0.00125;
@@ -57,12 +58,19 @@ export const Vortex = (props: VortexProps) => {
   const setup = () => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
+    
     if (canvas && container) {
-      const ctx = canvas.getContext("2d");
+      // Get 2D context
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
  
       if (ctx) {
+        // Ensure canvas is properly sized before initializing
         resize(canvas, ctx);
+        
+        // Initialize particles
         initParticles();
+        
+        // Start animation loop
         draw(canvas, ctx);
       }
     }
@@ -188,13 +196,28 @@ export const Vortex = (props: VortexProps) => {
     canvas: HTMLCanvasElement,
     ctx?: CanvasRenderingContext2D
   ) => {
-    const { innerWidth, innerHeight } = window;
- 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
- 
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
+    const container = containerRef.current as HTMLDivElement | null;
+    
+    if (container) {
+      const { clientWidth, clientHeight } = container;
+      
+      // Set canvas dimensions to match its container
+      canvas.width = clientWidth;
+      canvas.height = clientHeight;
+      
+      // Update the center coordinates
+      center[0] = 0.5 * canvas.width;
+      center[1] = 0.5 * canvas.height;
+    } else {
+      // Fallback to window dimensions
+      const { innerWidth, innerHeight } = window;
+      
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      
+      center[0] = 0.5 * canvas.width;
+      center[1] = 0.5 * canvas.height;
+    }
   };
  
   const renderGlow = (
@@ -225,15 +248,35 @@ export const Vortex = (props: VortexProps) => {
   };
  
   useEffect(() => {
+    // Run setup when component mounts
     setup();
-    window.addEventListener("resize", () => {
+    
+    // Define the resize handler
+    const handleResize = () => {
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
       if (canvas && ctx) {
         resize(canvas, ctx);
       }
-    });
-  }, []);
+    };
+    
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    
+    // Clean up function
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      
+      // Stop animation if component unmounts
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+    };
+  }, [props.baseHue, props.rangeHue, props.particleCount, props.backgroundColor]); // Rerun setup when these props change
  
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>
@@ -243,7 +286,7 @@ export const Vortex = (props: VortexProps) => {
         ref={containerRef}
         className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
       >
-        <canvas ref={canvasRef}></canvas>
+        <canvas ref={canvasRef} className="w-full h-full"></canvas>
       </motion.div>
  
       <div className={cn("relative z-10", props.className)}>

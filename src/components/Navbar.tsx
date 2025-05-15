@@ -52,7 +52,6 @@ const Navbar = () => {
           <a href="#early-access" className="text-sm font-medium hover:text-wisper-purple transition-colors">
             Early Access
           </a>
-          <ThemeToggle />
           <Button 
             className="gradient-bg hover:opacity-90 transition-opacity"
             onClick={() => setIsEarlyAccessOpen(true)}
@@ -91,9 +90,6 @@ const Navbar = () => {
                   <a href="#early-access" className="text-lg font-medium hover:text-wisper-purple transition-colors">
                     Early Access
                   </a>
-                  <div className="flex justify-center py-2">
-                    <ThemeToggle />
-                  </div>
                   <Button 
                     className="gradient-bg hover:opacity-90 transition-opacity w-full mt-4"
                     onClick={() => {
