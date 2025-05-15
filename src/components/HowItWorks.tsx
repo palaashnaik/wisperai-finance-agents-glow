@@ -5,23 +5,23 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     id: 1,
-    title: "System Mapping",
-    description: "We identify where autonomous agents deliver the highest ROI in your stack."
+    title: "Banking & Financial Services",
+    description: "Transform customer journeys with agents that navigate systems, verify information, and execute operations across your entire tech stack."
   },
   {
     id: 2,
-    title: "Agent Deployment",
-    description: "Custom agents are configured to your specific workflows and security requirements."
+    title: "Payments & Processing",
+    description: "Deploy agent teams that reconcile transactions, optimize payment routing, and autonomously resolve exceptions across multiple platforms."
   },
   {
     id: 3,
-    title: "Operational Integration",
-    description: "Your new autonomous workforce integrates with existing processes and monitoring."
+    title: "Lending & Credit",
+    description: "Enable end-to-end lending operations with agents that verify applicants, optimize terms, and navigate the entire origination process."
   },
   {
     id: 4,
-    title: "Continuous Adaptation",
-    description: "Agents evolve as your needs change and external systems update."
+    title: "Wealth & Investment",
+    description: "Transform portfolio management with agents that consolidate data, execute rebalancing, and continuously optimize strategies across custodial boundaries."
   }
 ];
 
@@ -42,14 +42,15 @@ const item = {
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20 bg-gradient-to-b from-background to-secondary/30">
-      <div className="container">
+    <section id="industries" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-wisper-blue/15 to-wisper-purple/15 opacity-60" />
+      <div className="container relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
-            The Implementation <span className="gradient-text">Blueprint</span>
+            For Forward-Thinking <span className="gradient-text">Financial Leaders</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A systematic approach to integrating autonomous agents into your financial systems
+            We're building intelligent agents that work together to solve intricate financial challenges no single system could tackle alone.
           </p>
         </div>
         

@@ -90,6 +90,6 @@
   }
 
   .glass-effect {
-    @apply bg-white/80 backdrop-blur-lg;
+    @apply bg-white/80 backdrop-blur-lg dark:bg-gray-900/80;
   }
 }

@@ -19,19 +19,19 @@ const CTASection = () => {
           transition={{ duration: 0.6 }}
           className="rounded-xl overflow-hidden relative"
         >
-          <div className="absolute inset-0 gradient-bg opacity-95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-wisper-purple to-wisper-blue opacity-95" />
           
           <div className="relative p-8 md:p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              The Bottom Line
+              Join Our Journey
             </h2>
             
             <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-4">
-              While your competition debates AI strategy, you could be deploying autonomous agents that execute it.
+              Financial services is about to undergo its most significant transformation yet—from automation to autonomous intelligence.
             </p>
             
             <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
-              The financial services leaders of tomorrow aren't just implementing AI. They're putting it to work.
+              The leaders of tomorrow are exploring the possibilities today.
             </p>
             
             <div className="flex justify-center">
@@ -39,7 +39,7 @@ const CTASection = () => {
                 className="bg-white text-wisper-purple hover:bg-white/90 px-6 flex items-center gap-2"
                 onClick={() => setIsBriefingOpen(true)}
               >
-                Book a Capability Demo
+                JOIN EARLY ACCESS WAITLIST
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
@@ -51,11 +51,11 @@ const CTASection = () => {
       <Dialog open={isBriefingOpen} onOpenChange={setIsBriefingOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Book a Capability Demo</DialogTitle>
+            <DialogTitle>Join Waitlist for Early Access</DialogTitle>
           </DialogHeader>
           <ContactForm 
             onClose={() => setIsBriefingOpen(false)} 
-            ctaText="Book Demo"
+            ctaText="Join Waitlist"
             source="cta_capability_demo"
           />
         </DialogContent>

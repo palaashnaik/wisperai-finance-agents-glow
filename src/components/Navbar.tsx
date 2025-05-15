@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Menu, X } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,15 +40,19 @@ const Navbar = () => {
           <span className="text-xl font-bold gradient-text">WisperAI</span>
         </div>
         <div className="hidden md:flex items-center space-x-8">
+          <a href="#vision" className="text-sm font-medium hover:text-wisper-purple transition-colors">
+            Our Vision
+          </a>
           <a href="#features" className="text-sm font-medium hover:text-wisper-purple transition-colors">
-            Features
+            Capabilities
           </a>
-          <a href="#how-it-works" className="text-sm font-medium hover:text-wisper-purple transition-colors">
-            How It Works
+          <a href="#industries" className="text-sm font-medium hover:text-wisper-purple transition-colors">
+            Industries
           </a>
-          <a href="#roadmap" className="text-sm font-medium hover:text-wisper-purple transition-colors">
-            Roadmap
+          <a href="#early-access" className="text-sm font-medium hover:text-wisper-purple transition-colors">
+            Early Access
           </a>
+          <ThemeToggle />
           <Button 
             className="gradient-bg hover:opacity-90 transition-opacity"
             onClick={() => setIsEarlyAccessOpen(true)}
@@ -74,15 +79,21 @@ const Navbar = () => {
                   </DrawerClose>
                 </div>
                 <div className="flex flex-col space-y-6">
+                  <a href="#vision" className="text-lg font-medium hover:text-wisper-purple transition-colors">
+                    Our Vision
+                  </a>
                   <a href="#features" className="text-lg font-medium hover:text-wisper-purple transition-colors">
-                    Features
+                    Capabilities
                   </a>
-                  <a href="#how-it-works" className="text-lg font-medium hover:text-wisper-purple transition-colors">
-                    How It Works
+                  <a href="#industries" className="text-lg font-medium hover:text-wisper-purple transition-colors">
+                    Industries
                   </a>
-                  <a href="#roadmap" className="text-lg font-medium hover:text-wisper-purple transition-colors">
-                    Roadmap
+                  <a href="#early-access" className="text-lg font-medium hover:text-wisper-purple transition-colors">
+                    Early Access
                   </a>
+                  <div className="flex justify-center py-2">
+                    <ThemeToggle />
+                  </div>
                   <Button 
                     className="gradient-bg hover:opacity-90 transition-opacity w-full mt-4"
                     onClick={() => {
