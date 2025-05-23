@@ -1,5 +1,5 @@
-
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 WisperAI | Terms | Security Framework | Privacy Policy
+              © 2025 WisperAI | <Link to="/terms" className="hover:text-wisper-purple transition-colors">Terms</Link> | <Link to="/privacy" className="hover:text-wisper-purple transition-colors">Privacy Policy</Link>
             </p>
             
             <div className="flex space-x-6">
