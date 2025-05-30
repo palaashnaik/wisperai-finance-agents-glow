@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -131,6 +130,12 @@ export function ContactForm({
           </Button>
         </div>
       </form>
+      
+      <div className="text-center mt-4">
+        <p className="text-sm text-gray-600">
+          Need help? Contact us at <a href="mailto:support@wisperai.com" className="text-blue-600 hover:text-blue-800 underline">support@wisperai.com</a>
+        </p>
+      </div>
     </Form>
   );
 }

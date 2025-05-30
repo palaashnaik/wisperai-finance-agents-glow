@@ -22,6 +22,9 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4 md:mb-0">
               © 2025 WisperAI | <Link to="/terms" className="hover:text-wisper-purple transition-colors">Terms</Link> | <Link to="/privacy" className="hover:text-wisper-purple transition-colors">Privacy Policy</Link>
             </p>
+            <p className="text-sm text-muted-foreground mb-4 md:mb-0">
+              Need help? Contact us at <a href="mailto:support@wisperai.com" className="text-blue-600 hover:text-blue-800 underline">support@wisperai.com</a>
+            </p>
             
             <div className="flex space-x-6">
               <a href="#" className="text-muted-foreground hover:text-foreground">
